@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {products} from '../productData';
 import Product from '../components/Product';
-import Pagination from '../components/Pagination';
+
+import Nav from '../components/Nav'
+//import Pagination from '../components/Pagination';
 import {connect} from 'react-redux';
 import {fetchProducts} from '../actions/product.actions.js';
 import {deleteProduct} from '../actions/product.actions.js';
 import {history} from '../index';
+import Pagination from "react-js-pagination";
 
 class Products extends Component
 {
@@ -15,7 +18,7 @@ class Products extends Component
         super(props);
         this.state = {filterVal: "", search: null,currentPage:1,postsPerPage:10}
         this.handleChange = this.handleChange.bind(this);
-
+      
     }
 
 componentWillMount()
@@ -37,7 +40,10 @@ handleChange(event) {
     this.setState({ search: keyword });
   }
 
-
+  handlePageChange(pageNumber) {
+    console.log('active page is ${pageNumber}');
+    this.setState({currentPage: pageNumber});
+  }
 
     render(){
 
@@ -79,7 +85,7 @@ else if(this.props.error )
 else{
         return(
            <div><div   align="left" >
-                <label>Filter:</label> {Search} 
+                <label>FILTER:</label> {Search} 
                 </div>
             <div>
                 
@@ -111,7 +117,17 @@ else{
                 </table>
             </div>
             <div>
-            <Pagination postsPerPage={this.state.postsPerPage} totalPosts={(this.props.products).length} paginate={paginate}></Pagination>
+            {/* <Pagination postsPerPage={this.state.postsPerPage} totalPosts={(this.props.products).length} paginate={paginate}></Pagination> */}
+            <Pagination 
+          activePage={this.state.currentPage}
+          itemsCountPerPage={10}
+          totalItemsCount={(this.props.products).length}
+          pageRangeDisplayed={5}
+          onChange={this.handlePageChange.bind(this)}
+        />
+            <div>
+         
+      </div>
             </div>
             </div> 
         )

@@ -1,0 +1,29 @@
+
+.container{
+
+    display: grid;
+    grid-template-columns: 40px 150px auto 50px 40px;
+   
+    grid-template-rows: 75px  35px auto 60px;
+}
+
+.item-logo {
+    grid-column-start: 2;
+    grid-column-end:3;
+  
+  }
+
+.item-header {
+    grid-column-start: 3;
+    grid-column-end:4;
+  
+  }
+
+  .item-content {
+    grid-column-start: 2;
+    grid-column-end:4;
+
+    grid-row-start: 3;
+    grid-row-end:4;
+  
+  }

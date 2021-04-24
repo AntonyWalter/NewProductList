@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 import {fetchBooks} from './actions/book.actions.js';
 
 import {fetchProducts} from './actions/product.actions.js';
+import {displayImage} from './actions/image.actions.js';
 
 import rootReducer from './reducers';
 
@@ -19,7 +20,9 @@ import {createBrowserHistory} from 'history';
 const store =createStore(rootReducer,applyMiddleware(thunk));
 
 //store.dispatch(fetchBooks());
-store.dispatch(fetchProducts());
+//store.dispatch(fetchProducts());
+
+store.dispatch(displayImage(-1));
 
 export const history = createBrowserHistory({forceRefresh: true});
 

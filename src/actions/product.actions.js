@@ -20,7 +20,6 @@ import {history} from '../index';
 
  export const fetchProductSuccess=(data) =>
 {
-    console.log("step2000000");
     return{
         type: FETCH_PRODUCT_SUCCESS,
         payload: data,

@@ -6,6 +6,7 @@ import CreateBook from './containers/CreateBook'
 
 import Products from './containers/Products';
 import CreateProduct from './containers/CreateProduct';
+import ProductImages from './containers/ProductImages';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -43,7 +44,7 @@ notifyPathname(pathname)
         </div>
     </Router> */
 
-          <Router> 
+        /*   <Router> 
           <div className="App">
             <Nav notifyPathname={this.notifyPathname} 
             pathname={this.state.pathname}/>
@@ -54,7 +55,12 @@ notifyPathname(pathname)
       </Switch>
           </div>
       </Router>
-    
+     */
+
+<div>
+<ProductImages></ProductImages>
+</div>
+
    )
  }
 

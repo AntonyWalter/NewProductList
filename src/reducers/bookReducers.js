@@ -27,8 +27,7 @@ switch(action.type)
         console.log(action.payload);
         return{...state,books:action.payload};
  default:
-     console.log("step4ggggggggggggg");
-     console.log(state);
+       console.log(state);
       return state;
 }
 }
